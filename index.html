@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOGG Car Detailing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .gradient-hero { background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%); }
+        button { cursor: pointer; transition: all 0.3s; }
+        .hidden { display: none; }
+        .group:hover img { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-2 rounded-lg">
+                    <i class="fas fa-car-side mr-1"></i> FOGG
+                </div>
+                <span class="text-xl font-bold text-gray-900">Car Detailing</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <button onclick="scrollToSection('services')" class="text-gray-600 hover:text-blue-500">Services</button>
+                <button onclick="scrollToSection('addons')" class="text-gray-600 hover:text-blue-500">Add-Ons</button>
+                <button onclick="scrollToSection('contact')" class="text-gray-600 hover:text-blue-500">Contact</button>
+                <button onclick="scrollToSection('booking-form')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Book Now</button>
+            </div>
+            <button onclick="toggleMenu()" class="md:hidden">
+                <i id="menu-icon" class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-100 p-4 space-y-2">
+            <button onclick="scrollToSection('services'); toggleMenu()" class="block w-full text-left py-2 hover:bg-gray-200">Services</button>
+            <button onclick="scrollToSection('addons'); toggleMenu()" class="block w-full text-left py-2 hover:bg-gray-200">Add-Ons</button>
+            <button onclick="scrollToSection('contact'); toggleMenu()" class="block w-full text-left py-2 hover:bg-gray-200">Contact</button>
+            <button onclick="scrollToSection('booking-form'); toggleMenu()" class="bg-blue-500 text-white w-full py-2 rounded">Book Now</button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="gradient-hero py-20 text-white text-center">
+        <div class="max-w-6xl mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Premium Car Detailing</h1>
+            <p class="text-xl mb-8">Victoria Area - Professional Services</p>
+            <button onclick="scrollToSection('services')" class="bg-white text-blue-500 px-6 py-3 rounded font-semibold mr-4">Services</button>
+            <button onclick="scrollToSection('booking-form')" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded font-semibold">Book Now</button>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="border p-6 rounded shadow">
+                    <h3 class="text-xl font-bold mb-2">Exterior Detail</h3>
+                    <p class="text-gray-600 mb-4">$100-$120 | 1-2 hours</p>
+                    <ul class="space-y-2 mb-4">
+                        <li><i class="fas fa-check text-green-500"></i> Wash & foam</li>
+                        <li><i class="fas fa-check text-green-500"></i> Wheels clean</li>
+                        <li><i class="fas fa-check text-green-500"></i> Dry & windows</li>
+                    </ul>
+                    <button onclick="scrollToSection('booking-form')" class="w-full bg-blue-500 text-white py-2 rounded">Book This</button>
+                </div>
+                <div class="border p-6 rounded shadow bg-blue-50">
+                    <h3 class="text-xl font-bold mb-2">Interior Detail</h3>
+                    <p class="text-gray-600 mb-4">$100-$130 | 1-1.5 hours</p>
+                    <ul class="space-y-2 mb-4">
+                        <li><i class="fas fa-check text-green-500"></i> Vacuum</li>
+                        <li><i class="fas fa-check text-green-500"></i> Seats clean</li>
+                        <li><i class="fas fa-check text-green-500"></i> Deodorize</li>
+                    </ul>
+                    <button onclick="scrollToSection('booking-form')" class="w-full bg-blue-500 text-white py-2 rounded">Book This</button>
+                </div>
+                <div class="border p-6 rounded shadow">
+                    <h3 class="text-xl font-bold mb-2">Full Detail</h3>
+                    <p class="text-gray-600 mb-4">$190 | 2-3 hours</p>
+                    <ul class="space-y-2 mb-4">
+                        <li><i class="fas fa-check text-green-500"></i> Exterior + Interior</li>
+                        <li><i class="fas fa-check text-green-500"></i> Polish & wax</li>
+                        <li><i class="fas fa-check text-green-500"></i> Engine clean</li>
+                    </ul>
+                    <button onclick="scrollToSection('booking-form')" class="w-full bg-blue-500 text-white py-2 rounded">Book This</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add-Ons -->
+    <section id="addons" class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Add-Ons</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <i class="fas fa-spray-can text-3xl text-blue-500 mb-2"></i>
+                    <h3 class="font-bold">Ceramic Coating</h3>
+                    <p>$150+</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <i class="fas fa-car-battery text-3xl text-green-500 mb-2"></i>
+                    <h3 class="font-bold">Headlight Restore</h3>
+                    <p>$50</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <i class="fas fa-leaf text-3xl text-purple-500 mb-2"></i>
+                    <h3 class="font-bold">Eco Wash</h3>
+                    <p>$30</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <i class="fas fa-shield-alt text-3xl text-yellow-500 mb-2"></i>
+                    <h3 class="font-bold">Wax Protection</h3>
+                    <p>$40</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">Contact Us</h2>
+            <div class="space-y-4 mb-8">
+                <p class="text-xl"><i class="fas fa-phone mr-2"></i> (672) 324-2054</p>
+                <p class="text-xl"><i class="fas fa-envelope mr-2"></i> ankurjassal3@gmail.com</p>
+                <p class="text-lg text-gray-600">Victoria Area - Call or email for bookings!</p>
+            </div>
+            <button onclick="scrollToSection('booking-form')" class="bg-blue-500 text-white px-6 py-3 rounded font-semibold">Send Message</button>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="booking-form" class="py-16 bg-gray-100">
+        <div class="max-w-md mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-6">Book Now</h2>
+            <!-- UPDATED FORM WITH YOUR FORMSPREE LINK -->
+            <form action="https://formspree.io/f/xjkagvly" method="POST" class="space-y-4">
+                <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border rounded">
+                <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 border rounded">
+                <input type="tel" name="phone" placeholder="Your Phone" required class="w-full p-3 border rounded">
+                <select name="service" class="w-full p-3 border rounded">
+                    <option>Exterior Detail</option>
+                    <option>Interior Detail</option>
+                    <option>Full Detail</option>
+                    <option>Add-On (Specify in message)</option>
+                </select>
+                <input type="date" name="date" required class="w-full p-3 border rounded">
+                <textarea name="message" placeholder="Additional details" class="w-full p-3 border rounded h-20"></textarea>
+                <button type="submit" class="w-full bg-blue-500 text-white py-3 rounded font-semibold">Submit Booking</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- JavaScript - Keeps buttons and menu working (no form JS needed now) -->
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        }
+    </script>
+</body>
+</html>
